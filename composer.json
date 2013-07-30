@@ -1,0 +1,27 @@
+{
+    "name": "laravella/cms",
+    "description": "Laravella CMS",
+    "authors": [
+        {
+            "name": "laravella",
+            "email": "laravella.cms@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/laravella/crud"
+        }],
+    "require": {
+        "php": ">=5.3.0",
+        "laravella/crud": "dev-master",
+    },
+    "autoload": {
+        "classmap": [
+            "src/controllers",
+            "src/database/migrations",
+            "src/database/seeds"
+        ]
+    },
+    "minimum-stability": "dev"
+}
