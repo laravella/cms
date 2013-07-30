@@ -11,10 +11,11 @@
         {
             "type": "vcs",
             "url": "https://github.com/laravella/crud"
-        }],
+        }
+    ],
     "require": {
         "php": ">=5.3.0",
-        "laravella/crud": "dev-master",
+        "laravella/crud": "dev-master"
     },
     "autoload": {
         "classmap": [
