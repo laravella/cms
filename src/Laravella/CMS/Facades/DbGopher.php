@@ -1,4 +1,4 @@
-<?php namespace Laravella\Crud\Facades;
+<?php namespace Laravella\CMS\Facades;
 
 /**
  * Description of Db
@@ -8,7 +8,7 @@
 
 use Illuminate\Support\Facades\Facade;
 
-class DbGopher extends Facade {
+class CMSGopher extends Facade {
 
     /**
      * Get the registered name of the component.
@@ -17,7 +17,7 @@ class DbGopher extends Facade {
      */
     protected static function getFacadeAccessor()
     {
-        return 'dbgopher';
+        return 'cmsgopher';
     }
 
 }

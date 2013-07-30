@@ -1,11 +1,11 @@
-<?php namespace Laravella\Crud;
+<?php namespace Laravella\CMS;
  
 /**
  * Description of DbGopher
  *
  * @author Victor
  */
-class DbGopher {
+class CMSGopher {
  
   public function greeting(){
     return "What up dawg";
