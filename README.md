@@ -1,4 +1,4 @@
 cms
 ===
 
-Laravella CMS
+Laravella CMS. See https://github.com/laravella/laravella
