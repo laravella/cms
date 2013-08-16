@@ -1,4 +1,4 @@
-<?php namespace Laravella\Cms;
+<?php namespace Laravella\CMS;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
