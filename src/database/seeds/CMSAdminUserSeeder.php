@@ -1,6 +1,6 @@
 <?php
 
-class RavelAdminUserSeeder extends Seeder
+class CMSAdminUserSeeder extends Seeder
 {
 
 
