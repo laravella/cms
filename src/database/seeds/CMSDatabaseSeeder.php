@@ -1,6 +1,6 @@
 <?php
 
-class RavelDatabaseSeeder extends Seeder {
+class CMSDatabaseSeeder extends Seeder {
 
 	/**
 	 * Run the database seeds.
@@ -9,8 +9,7 @@ class RavelDatabaseSeeder extends Seeder {
 	 */
 	public function run()
 	{
-		$this->call('RavelInitSeeder');
-		$this->call('RavelAdminUserSeeder');
+		$this->call('CMSAdminUserSeeder');
 	}
 
 }
