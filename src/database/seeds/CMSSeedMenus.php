@@ -41,13 +41,6 @@ class CMSSeedMenus extends Seeder
                 
                 $this->__addMenuPermissions($contentId, 'superadmin');
                 $this->__addMenuPermissions($contentId, 'admin');
-                
-                $this->__addMenuPermissions($metaDataId, 'superadmin');
-                $this->__addMenuPermissions($metaDataId, 'admin');
-                
-                $this->__addMenuPermissions($adminId, 'superadmin');
-                $this->__addMenuPermissions($adminId, 'admin');
-                
 		
 	}
 }
