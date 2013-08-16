@@ -15,8 +15,12 @@
         "classmap": [
             "src/controllers",
             "src/migrations",
+            "src/commands",
             "src/database/seeds"
-        ]
+        ],
+        "psr-0": {
+            "Laravella\\CMS": "src/"
+        }
     },
     "minimum-stability": "dev"
 }
