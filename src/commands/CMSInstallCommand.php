@@ -1,4 +1,4 @@
-<?php namespace Laravella\Ravel;
+<?php namespace Laravella\CMS;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
@@ -6,21 +6,21 @@ use Symfony\Component\Console\Input\InputArgument;
 use Illuminate\Filesystem\Filesystem;
 use Config;
 
-class RavelInstallCommand extends Command {
+class CMSInstallCommand extends Command {
 
 	/**
 	 * The console command name.
 	 *
 	 * @var string
 	 */
-	protected $name = 'ravel:install';
+	protected $name = 'cms:install';
 
 	/**
 	 * The console command description.
 	 *
 	 * @var string
 	 */
-	protected $description = 'Install Ravel including migrations';
+	protected $description = 'Install CMS including migrations';
 
 	/**
 	 * Create a new command instance.
@@ -46,17 +46,17 @@ class RavelInstallCommand extends Command {
 
 		if($this->checkifWorkBench())
 		{
-			$this->call('asset:publish',array('--bench'=>'laravella/ravel'));
-			$this->call('migrate',array('--bench'=>'laravella/ravel'));
+			$this->call('asset:publish',array('--bench'=>'laravella/cms'));
+			$this->call('migrate',array('--bench'=>'laravella/cms'));
 		}
 		else
 		{	
-			$this->call('config:publish',array('package'=>'laravella/ravel'));
-			$this->call('asset:publish',array('package'=>'laravella/ravel'));
-			$this->call('migrate',array('--package'=>'laravella/ravel'));
+			$this->call('config:publish',array('package'=>'laravella/cms'));
+			$this->call('asset:publish',array('package'=>'laravella/cms'));
+			$this->call('migrate',array('--package'=>'laravella/cms'));
 		}
 
-		$this->call('db:seed',array('--class'=>'RavelDatabaseSeeder'));
+		$this->call('db:seed',array('--class'=>'CMSDatabaseSeeder'));
 
 		$this->setupUploadDirectory();
 
@@ -67,7 +67,7 @@ class RavelInstallCommand extends Command {
 	public function checkifWorkBench()
 	{
 		$path = __FILE__;
-		return str_contains(strtolower($path),'/workbench/laravella/ravel/');
+		return str_contains(strtolower($path),'/workbench/laravella/cms/');
 	}
 
 	public function setupUploadDirectory()

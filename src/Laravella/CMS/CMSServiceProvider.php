@@ -1,8 +1,8 @@
-<?php namespace Laravella\Crud;
+<?php namespace Laravella\CMS;
 
 use Illuminate\Support\ServiceProvider;
 
-class CrudServiceProvider extends ServiceProvider {
+class CMSServiceProvider extends ServiceProvider {
 
 	/**
 	 * Indicates if loading of the provider is deferred.
@@ -18,9 +18,12 @@ class CrudServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('laravella/crud');
+		$this->package('laravella/cms');
 
-                include __DIR__.'/../../routes/routes.php';                
+                include __DIR__.'/../../routes.php';          
+                
+                $this->registerCommands();
+                
 	}
 
 	/**
@@ -31,7 +34,7 @@ class CrudServiceProvider extends ServiceProvider {
 	public function register()
 	{
         // Register 'underlyingclass' instance container to our UnderlyingClass object
-        $this->app['dbgopher'] = $this->app->share(function($app)
+        $this->app['cmsgopher'] = $this->app->share(function($app)
         {
             return new DbGopher;
         });
@@ -39,7 +42,7 @@ class CrudServiceProvider extends ServiceProvider {
         $this->app->booting(function()
             {
               $loader = \Illuminate\Foundation\AliasLoader::getInstance();
-              $loader->alias('DbGopher', 'Laravella\Crud\Facades\DbGopher');
+              $loader->alias('CMSGopher', 'Laravella\CMS\Facades\CMSGopher');
             });
 	}
 
@@ -53,4 +56,30 @@ class CrudServiceProvider extends ServiceProvider {
 		return array();
 	}
 
+    /** register the custom commands * */
+    public function registerCommands()
+    {
+//            Artisan::add(new InstallCommand);
+//            Artisan::add(new UpdateCommand);
+
+        $commands = array('CMSInstall');
+
+        foreach ($commands as $command)
+        {
+            $this->{'register' . $command . 'Command'}();
+        }
+
+        $this->commands(
+                'command.cms.install'
+        );
+    }
+
+    public function registerCMSInstallCommand()
+    {
+        $this->app['command.cms.install'] = $this->app->share(function($app)
+                {
+                    return new CMSInstallCommand();
+                });
+    }        
+        
 }

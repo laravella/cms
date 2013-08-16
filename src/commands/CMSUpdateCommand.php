@@ -5,7 +5,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Config;
 
-class RavelCmsCommand extends Command {
+class CmsUpdateCommand extends Command {
 
 	/**
 	 * The console command name.
