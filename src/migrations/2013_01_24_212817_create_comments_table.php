@@ -28,8 +28,8 @@ class CreateCommentsTable extends Migration {
 			$table->integer('dislikes')->default(0);
 			$table->timestamps();
 
-			$table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
-			$table->foreign('content_id')->references('id')->on('contents')->onDelete('cascade');
+//			$table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
+//			$table->foreign('content_id')->references('id')->on('contents')->onDelete('cascade');
 		});
 	}
 
@@ -40,7 +40,7 @@ class CreateCommentsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('comments');
+		Schema::dropIfExists('comments');
 	}
 
 }

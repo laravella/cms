@@ -22,8 +22,8 @@ class CreateUsergroupRoles extends Migration {
 
 			$table->unique(array('usergroup_id','module_id'),'roles_unique');
 
-			$table->foreign('usergroup_id')->references('id')->on('usergroups')->onDelete('cascade')->onUpdate('cascade');
-			$table->foreign('module_id')->references('id')->on('modules')->onDelete('cascade')->onUpdate('cascade');
+//			$table->foreign('usergroup_id')->references('id')->on('usergroups')->onDelete('cascade')->onUpdate('cascade');
+//			$table->foreign('module_id')->references('id')->on('modules')->onDelete('cascade')->onUpdate('cascade');
 		});
 	}
 
@@ -34,7 +34,7 @@ class CreateUsergroupRoles extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('roles');
+		Schema::dropIfExists('roles');
 	}
 
 }

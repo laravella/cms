@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration {
 		    $table->boolean('activated')->default(false);
 		    $table->timestamps();
 
-		    $table->foreign('usergroup_id')->references('id')->on('usergroups')->onDelete('restrict')->onUpdate('cascade');
+		   // $table->foreign('usergroup_id')->references('id')->on('usergroups')->onDelete('restrict')->onUpdate('cascade');
 
 		});
 	}
@@ -38,7 +38,7 @@ class CreateUsersTable extends Migration {
 	public function down()
 	{
 		
-		Schema::drop('users');
+		Schema::dropIfExists('users');
 	}
 
 }

@@ -21,8 +21,8 @@ class CreateContentMediaPivotTable extends Migration {
 			$table->integer('weight')->default(0);
 			$table->timestamps();
 
-			$table->foreign('content_id')->references('id')->on('contents')->onDelete('cascade');
-			$table->foreign('media_id')->references('id')->on('medias')->onDelete('cascade');
+//			$table->foreign('content_id')->references('id')->on('contents')->onDelete('cascade');
+//			$table->foreign('media_id')->references('id')->on('medias')->onDelete('cascade');
 		});
 	}
 
@@ -33,7 +33,7 @@ class CreateContentMediaPivotTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('content_media');
+		Schema::dropIfExists('content_media');
 	}
 
 }

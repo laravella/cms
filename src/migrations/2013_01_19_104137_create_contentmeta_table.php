@@ -19,7 +19,7 @@ class CreateContentmetaTable extends Migration {
 			$table->string('metakey');
 			$table->text('metavalue');
 
-			$table->foreign('content_id')->references('id')->on('contents')->onDelete('cascade');
+//			$table->foreign('content_id')->references('id')->on('contents')->onDelete('cascade');
 		});
 	}
 
@@ -30,7 +30,7 @@ class CreateContentmetaTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('contentmetas');
+		Schema::dropIfExists('contentmetas');
 	}
 
 }

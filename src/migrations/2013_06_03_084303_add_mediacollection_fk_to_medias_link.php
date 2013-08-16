@@ -12,10 +12,10 @@ class AddMediacollectionFkToMediasLink extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('medias', function(Blueprint $table)
-		{
-			$table->foreign('mcollection_id','mcollection_id_fk')->references('id')->on('mcollections')->onUpdate('cascade')->onDelete('cascade');
-		});
+//		Schema::table('medias', function(Blueprint $table)
+//		{
+//			$table->foreign('mcollection_id','mcollection_id_fk')->references('id')->on('mcollections')->onUpdate('cascade')->onDelete('cascade');
+//		});
 	}
 
 	/**
@@ -25,10 +25,10 @@ class AddMediacollectionFkToMediasLink extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('medias', function(Blueprint $table)
-		{
-			$table->dropForeign('mcollection_id_fk');
-		});
+//		Schema::table('medias', function(Blueprint $table)
+//		{
+//			$table->dropForeign('mcollection_id_fk');
+//		});
 	}
 
 }

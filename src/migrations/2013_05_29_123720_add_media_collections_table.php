@@ -29,7 +29,7 @@ class AddMediaCollectionsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('mcollections');
+		Schema::dropIfExists('mcollections');
 	}
 
 }

@@ -21,8 +21,8 @@ class CreateCategoryContentJoinTable extends Migration {
 
 			$table->unique(array('category_id','content_id'),'cat_con_unique');
 
-			$table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-			$table->foreign('content_id')->references('id')->on('contents')->onDelete('cascade');
+//			$table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+//			$table->foreign('content_id')->references('id')->on('contents')->onDelete('cascade');
 		});
 	}
 
@@ -33,7 +33,7 @@ class CreateCategoryContentJoinTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('category_content');
+		Schema::dropIfExists('category_content');
 	}
 
 }

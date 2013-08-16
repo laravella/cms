@@ -24,7 +24,7 @@ class CreateMenuLinksTable extends Migration {
 			$table->boolean('publish')->default(false);
 			$table->timestamps();
 
-			$table->foreign('menu_id')->references('id')->on('menus')->onDelete('cascade');
+//			$table->foreign('menu_id')->references('id')->on('menus')->onDelete('cascade');
 			
 		});
 	}
@@ -36,7 +36,7 @@ class CreateMenuLinksTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('links');
+		Schema::dropIfExists('links');
 	}
 
 }

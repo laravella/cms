@@ -37,7 +37,7 @@ class CreateContentsTable extends Migration {
 
 			$table->unique(array('slug','content_type','lang','publish_date'),'contents_unique');
 
-			$table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
+//			$table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
 
 
 		});
@@ -50,7 +50,7 @@ class CreateContentsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('contents');
+		Schema::dropIfExists('contents');
 	}
 
 }

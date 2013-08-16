@@ -16,13 +16,14 @@ class CreateMapsTable extends Migration {
 					$table->string('latitude', 7,5);
 					$table->string('longitude', 7,5);
 					$table->string('title');
-					$table->string('lang', 3);
-					$table->integer('author_id')->unsigned();
-					$table->string('status')->default('draft'); //draft, submitted, published,
-					$table->datetime('publish_date');
+					$table->string('lang', 3)->nullable();
+					$table->integer('author_id')->unsigned()->nullable();
+					$table->string('status')->default('draft')->nullable(); //draft, submitted, published,
+					$table->datetime('publish_date')->nullable();
+					$table->datetime('deleted_at')->nullable();
 					$table->timestamps();
 
-					$table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
+//					$table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
 				});
 	}
 
@@ -32,7 +33,7 @@ class CreateMapsTable extends Migration {
 	 * @return void
 	 */
 	public function down() {
-		Schema::drop('contents');
+		Schema::dropIfExists('contents');
 	}
 
 }
