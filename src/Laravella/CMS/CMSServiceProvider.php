@@ -1,6 +1,4 @@
-<?php
-
-namespace Laravella\CMS;
+<?php namespace Laravella\CMS;
 
 use Illuminate\Support\ServiceProvider;
 
