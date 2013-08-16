@@ -10,6 +10,7 @@ class CMSDatabaseSeeder extends Seeder {
 	public function run()
 	{
 		$this->call('CMSAdminUserSeeder');
+		$this->call('CMSSeedMenus');
 	}
 
 }

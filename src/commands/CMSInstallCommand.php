@@ -56,11 +56,9 @@ class CMSInstallCommand extends Command {
 			$this->call('migrate',array('--package'=>'laravella/cms'));
 		}
 
-		$this->call('db:seed',array('--class'=>'CMSDatabaseSeeder'));
-
 		$this->setupUploadDirectory();
 
-		$this->info('Successfully Completed Installation of Ravel');
+		$this->info('Successfully Completed Installation of CMS');
 	}
 
 
