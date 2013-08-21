@@ -7,9 +7,15 @@
             "email": "laravella.cms@gmail.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/laravella/crud"
+        }],
     "require": {
         "php": ">=5.3.0",
-        "illuminate/support": "4.0.x"
+        "illuminate/support": "4.0.x",
+        "laravella/crud": "dev-develop-vg"
     },
     "autoload": {
         "classmap": [
