@@ -11,6 +11,7 @@ class CMSDatabaseSeeder extends Seeder {
 	{
 		$this->call('CMSAdminUserSeeder');
 		$this->call('CMSSeedMenus');
+		$this->call('CMSSeedContentTypes');
 	}
 
 }
