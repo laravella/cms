@@ -23,14 +23,14 @@ class CMSSeedMenus extends Seeder
 	public function run()
 	{
 
-		DB::table('_db_menus')->delete();
-		DB::table('_db_menu_permissions')->delete();
+//		DB::table('_db_menus')->delete();
+//		DB::table('_db_menu_permissions')->delete();
                 
                 $topMenuId = $this->__addMenu('TopMenu', '', 'icon-file', null);
                 DB::table('_db_menus')->where("id", $topMenuId)->update(array("parent_id"=>$topMenuId));
 
                 $contentId = $this->__addMenu('Contents', '', 'icon-file', $topMenuId);
-                $this->__addMenu('Pages', '/sb/select/contents', 'icon-file', $contentId);
+                $this->__addMenu('Pages', '/db/select/contents', 'icon-file', $contentId);
                 //$this->__addMenu('Posts', '/admin/posts/index', 'icon-file', $contentId);
                 $this->__addMenu('Post Categories', '/db/select/categories', 'icon-file', $contentId);
                 $this->__addMenu('divider', '/db/select/users', 'icon-file', $contentId);
