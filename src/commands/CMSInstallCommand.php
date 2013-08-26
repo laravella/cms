@@ -54,6 +54,9 @@ class CMSInstallCommand extends Command {
 			$this->call('config:publish',array('package'=>'laravella/cms'));
 			$this->call('asset:publish',array('package'=>'laravella/cms'));
 			$this->call('migrate',array('--package'=>'laravella/cms'));
+                        
+                        $this->call('db:seed',array('--class'=>'CMSDatabaseSeeder'));
+                        $this->info('Successfully seeded CMS');
 		}
 
 		$this->setupUploadDirectory();
