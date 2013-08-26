@@ -1,4 +1,4 @@
-<?php namespace Laravella\Crud;
+<?php
 
 use Laravella\Crud\Log;
 use \Seeder;
