@@ -24,6 +24,9 @@
             "src/commands",
             "src/database/seeds"
         ],
+        "files":[
+            "src/Laravella/CMS/RavelHelpers.php"
+        ],
         "psr-0": {
             "Laravella\\CMS": "src/"
         }
