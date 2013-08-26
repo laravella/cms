@@ -18,7 +18,8 @@ class CreateContentsTable extends Migration {
 			$table->string('lang',3);
 			$table->integer('author_id')->unsigned();
 			$table->string('author_name')->nullable(); //name to overide actual username
-			$table->string('content_type'); //post, page, attachement
+			$table->string('content_type'); //post, page, attachement // deprecated
+			$table->integer('content_type_id')->unsigned();; //post, page, attachement
 			$table->string('content_mime_type')->nullable(); //for attachments only
 			$table->string('title');
 			$table->string('slug');
