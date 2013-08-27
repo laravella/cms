@@ -1,12 +1,14 @@
 {
     "name": "laravella/cms",
     "description": "Laravella CMS",
-    "keywords": ["laravel","cms","radiate","laravella","ravel"],
+    "keywords": ["ravel","laravel","cms"],
     "license": "MIT",
     "authors": [
         {
-            "name": "laravella",
-            "email": "laravella.cms@gmail.com"
+            "name": "Victor Geere",
+            "email": "laravella.cms@gmail.com",
+            "homepage": "http://github.com/victorgeere/laravella",
+            "role": "Developer"
         }
     ],
     "repositories": [
