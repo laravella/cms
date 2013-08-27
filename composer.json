@@ -1,6 +1,8 @@
 {
     "name": "laravella/cms",
     "description": "Laravella CMS",
+    "keywords": ["laravel","cms","radiate","laravella","ravel"],
+    "license": "MIT",
     "authors": [
         {
             "name": "laravella",
