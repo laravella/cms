@@ -33,7 +33,7 @@ class CreateMapsTable extends Migration {
 	 * @return void
 	 */
 	public function down() {
-		Schema::dropIfExists('contents');
+		Schema::dropIfExists('maps');
 	}
 
 }
