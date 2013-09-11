@@ -1,11 +1,14 @@
-<?php
+<?php namespace Laravella\CMS;
 
-class CMSRestoreSeeder {
+use \Seeder;
+use \DB;
+
+class CMSRestoreSeeder extends Seeder {
 
     private function __restoreTable($tableName) {
         $sql = "drop table if exists `$tableName`;";
         echo DB::unprepared($sql) . "\n";
-        $sql = "create table `$tableName` as select * from `$tableName`";
+        $sql = "create table `$tableName` as select * from `_db_bak_$tableName`";
         echo DB::unprepared($sql) . "\n";
     }
     

@@ -1,6 +1,9 @@
-<?php
+<?php namespace Laravella\CMS;
 
-class CMSBackupSeeder {
+use \Seeder;
+use \DB;
+
+class CMSBackupSeeder extends Seeder {
 
     private function __backupTable($tableName) {
         $sql = "drop table if exists `_db_bak_$tableName`;";
