@@ -61,16 +61,24 @@ class CMSServiceProvider extends ServiceProvider {
 //            Artisan::add(new InstallCommand);
 //            Artisan::add(new UpdateCommand);
 
-        $commands = array('CMSInstall', 'CMSUpdate');
+        $commands = array('CMSInstall'=>'command.cms.install', 'CMSUpdate'=>'command.cms.update');
 
-        foreach ($commands as $command)
+        foreach ($commands as $command=>$name)
         {
-            $this->{'register' . $command . 'Command'}();
+            $className = $command . 'Command';
+            $this->registerCommand($name, $className); //CMSInstallCommand
+            //$this->{'register' . $commandName}();
+            $commands[] = $name;
         }
+        $this->commands[] = $name;
+    }
 
-        $this->commands(
-                'command.cms.install', 'command.cms.update'
-        );
+    public function registerCommand($name, $class)
+    {
+        $this->app[$name] = $this->app->share(function($app)
+                {
+                    return new $class();
+                });
     }
 
     public function registerCMSInstallCommand()
