@@ -3,6 +3,8 @@
 class CMSBackupSeeder {
 
     private function __backupTable($tableName) {
+        $sql = "drop table if exists `_db_bak_$tableName`;";
+        echo DB::unprepared($sql) . "\n";
         $sql = "create table `_db_bak_$tableName` as select * from `$tableName`";
         echo DB::unprepared($sql) . "\n";
         

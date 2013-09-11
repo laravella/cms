@@ -3,7 +3,9 @@
 class CMSRestoreSeeder {
 
     private function __restoreTable($tableName) {
-        $sql = "create table `_db_bak_$tableName` as select * from `$tableName`";
+        $sql = "drop table if exists `$tableName`;";
+        echo DB::unprepared($sql) . "\n";
+        $sql = "create table `$tableName` as select * from `$tableName`";
         echo DB::unprepared($sql) . "\n";
     }
     
