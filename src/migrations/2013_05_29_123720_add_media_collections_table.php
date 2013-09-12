@@ -16,6 +16,7 @@ class AddMediaCollectionsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('name');
+			$table->string('slug')->nullable();
 			$table->boolean('shared')->default(false);
 			$table->integer('user_id');
 			$table->timestamps();
