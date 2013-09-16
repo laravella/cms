@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsergroupsTable extends Migration {
+class CMSCreateUsergroupsTable extends Migration {
 
 	/**
 	 * Run the migrations.

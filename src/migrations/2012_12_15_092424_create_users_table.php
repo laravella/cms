@@ -12,6 +12,8 @@ class CreateUsersTable extends Migration {
 	 */
 	public function up()
 	{
+        if (!Schema::hasTable('users'))
+        {
 		Schema::create('users', function(Blueprint $table)
 		{
 			$table->increments('id');
@@ -28,6 +30,7 @@ class CreateUsersTable extends Migration {
 		   // $table->foreign('usergroup_id')->references('id')->on('usergroups')->onDelete('restrict')->onUpdate('cascade');
 
 		});
+        }
 	}
 
 	/**
