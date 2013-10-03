@@ -19,7 +19,8 @@ class AddMediaCollectionsTable extends Migration {
 			$table->string('slug')->nullable();
 			$table->boolean('shared')->default(false);
 			$table->integer('user_id');
-			$table->timestamps();
+                        $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+                        $table->timestamp('updated_at')->default('0000-00-00 00:00:00');
 		});
 	}
 

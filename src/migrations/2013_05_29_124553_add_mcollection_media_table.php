@@ -17,7 +17,8 @@ class AddMcollectionMediaTable extends Migration {
 			$table->increments('id');
 			$table->integer('media_id');
 			$table->integer('mcollection_id');
-			$table->timestamps();
+                        $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+                        $table->timestamp('updated_at')->default('0000-00-00 00:00:00');
 		});
 	}
 

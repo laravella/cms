@@ -19,7 +19,8 @@ class CreateContentMediaPivotTable extends Migration {
 			$table->integer('media_id')->unsigned();
 			$table->string('content_caption')->nullable();
 			$table->integer('weight')->default(0);
-			$table->timestamps();
+                        $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+                        $table->timestamp('updated_at')->default('0000-00-00 00:00:00');
 
 //			$table->foreign('content_id')->references('id')->on('contents')->onDelete('cascade');
 //			$table->foreign('media_id')->references('id')->on('medias')->onDelete('cascade');

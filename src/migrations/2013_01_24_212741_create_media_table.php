@@ -26,7 +26,8 @@ class CreateMediaTable extends Migration {
 			$table->string('keywords')->default(null)->nullable();
 			$table->string('mediascol')->default(null)->nullable();
 			$table->string('external_link')->default(null)->nullable();
-			$table->timestamps();
+                        $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+                        $table->timestamp('updated_at')->default('0000-00-00 00:00:00');
 		});
 	}
 

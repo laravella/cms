@@ -22,7 +22,8 @@ class CreateMenuLinksTable extends Migration {
 			$table->integer('weight')->default(0);
 			$table->integer('parent_id')->default(0)->unsigned();
 			$table->boolean('publish')->default(false);
-			$table->timestamps();
+                        $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+                        $table->timestamp('updated_at')->default('0000-00-00 00:00:00');
 
 //			$table->foreign('menu_id')->references('id')->on('menus')->onDelete('cascade');
 			

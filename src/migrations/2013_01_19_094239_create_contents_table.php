@@ -34,7 +34,8 @@ class CreateContentsTable extends Migration {
 			$table->integer('parent_id')->default(0)->unsigned();
 			$table->integer('comment_count')->default(0);
 			$table->datetime('publish_date');
-			$table->timestamps();
+                        $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+                        $table->timestamp('updated_at')->default('0000-00-00 00:00:00');
 
 			$table->unique(array('slug','content_type','lang','publish_date'),'contents_unique');
 

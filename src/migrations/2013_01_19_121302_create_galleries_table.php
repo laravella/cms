@@ -18,7 +18,8 @@ class CreateGalleriesTable extends Migration {
 			$table->string('name');
 			$table->string('slug')->nullable();
 			$table->integer('media_id')->unsigned()->nullable(); //thumbnail
-			$table->timestamps();
+                        $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+                        $table->timestamp('updated_at')->default('0000-00-00 00:00:00');
 		});
 	}
 

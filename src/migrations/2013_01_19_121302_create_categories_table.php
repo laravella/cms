@@ -19,7 +19,8 @@ class CreateCategoriesTable extends Migration {
 			$table->string('list_layout')->nullable(); //blog layout
 			$table->string('item_layout')->nullable(); //single page layout
 			$table->string('lang',3);
-			$table->timestamps();
+                        $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+                        $table->timestamp('updated_at')->default('0000-00-00 00:00:00');
 		});
 	}
 

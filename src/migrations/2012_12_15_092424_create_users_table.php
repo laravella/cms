@@ -18,14 +18,15 @@ class CreateUsersTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('username',100)->unique();
-		    $table->string('email')->unique();
-		    $table->string('password');
-		    $table->string('first_name',100);
-		    $table->string('last_name',100);
-		    $table->string('api_token',100);
-		    $table->integer('usergroup_id')->unsigned();
-		    $table->boolean('activated')->default(false);
-		    $table->timestamps();
+                        $table->string('email')->unique();
+                        $table->string('password');
+                        $table->string('first_name',100);
+                        $table->string('last_name',100);
+                        $table->string('api_token',100);
+                        $table->integer('usergroup_id')->unsigned();
+                        $table->boolean('activated')->default(false);
+                        $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+                        $table->timestamp('updated_at')->default('0000-00-00 00:00:00');
 
 		   // $table->foreign('usergroup_id')->references('id')->on('usergroups')->onDelete('restrict')->onUpdate('cascade');
 

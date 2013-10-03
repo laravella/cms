@@ -26,7 +26,8 @@ class CreateCommentsTable extends Migration {
 			$table->boolean('approved')->default(false);
 			$table->integer('likes')->default(0);
 			$table->integer('dislikes')->default(0);
-			$table->timestamps();
+                        $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+                        $table->timestamp('updated_at')->default('0000-00-00 00:00:00');
 
 //			$table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
 //			$table->foreign('content_id')->references('id')->on('contents')->onDelete('cascade');

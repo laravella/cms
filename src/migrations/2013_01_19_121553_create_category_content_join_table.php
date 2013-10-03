@@ -17,7 +17,8 @@ class CreateCategoryContentJoinTable extends Migration {
 			$table->increments('id');
 			$table->integer('category_id')->unsigned();
 			$table->integer('content_id')->unsigned();
-			$table->timestamps();
+                        $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+                        $table->timestamp('updated_at')->default('0000-00-00 00:00:00');
 
 			$table->unique(array('category_id','content_id'),'cat_con_unique');
 
