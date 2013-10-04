@@ -22,7 +22,7 @@ class CMSCreateMenusTable extends Migration {
 			$table->integer('weight')->default(0);
 			$table->string('href')->nullable();
 			$table->integer('parent_id')->nullable();
-                        $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+                        $table->timestamp('created_at')->default('0000-00-00 00:00:00');
                         $table->timestamp('updated_at')->default('0000-00-00 00:00:00');
 		});
             }
