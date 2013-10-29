@@ -62,9 +62,7 @@ class CMSServiceProvider extends ServiceProvider {
 //            Artisan::add(new UpdateCommand);
 
         $commands = array('CMSInstall'=>'command.cms.install', 
-            'CMSUpdate'=>'command.cms.update',
-            'CMSBackup'=>'command.cms.backup',
-            'CMSRestore'=>'command.cms.restore');
+            'CMSUpdate'=>'command.cms.update');
 
         $cmd = array();
         foreach ($commands as $command=>$name)
@@ -101,20 +99,5 @@ class CMSServiceProvider extends ServiceProvider {
                 });
     }
 
-    public function registerCMSBackupCommand()
-    {
-        $this->app['command.cms.backup'] = $this->app->share(function($app)
-                {
-                    return new CMSBackupCommand($app['db']);
-                });
-    }
-
-    public function registerCMSRestoreCommand()
-    {
-        $this->app['command.cms.restore'] = $this->app->share(function($app)
-                {
-                    return new CMSRestoreCommand($app['db']);
-                });
-    }
 
 }
