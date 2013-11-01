@@ -42,22 +42,10 @@ class CMSInstallCommand extends Command {
 
 		// $app = $this->getLaravel();
 		// $env = $app->environment();
-	
 
-		if($this->checkifWorkBench())
-		{
-			$this->call('asset:publish',array('--bench'=>'laravella/cms'));
-			$this->call('migrate',array('--bench'=>'laravella/cms'));
-		}
-		else
-		{	
-			$this->call('config:publish',array('package'=>'laravella/cms'));
-			$this->call('asset:publish',array('package'=>'laravella/cms'));
-			$this->call('migrate',array('--package'=>'laravella/cms'));
-                        
-                        $this->call('db:seed',array('--class'=>'CMSDatabaseSeeder'));
-                        $this->info('Successfully seeded CMS');
-		}
+                $this->call('migrate',array('--package'=>'laravella/cms'));
+
+                $this->info('Successfully seeded CMS');
 
 		$this->setupUploadDirectory();
 

@@ -39,7 +39,9 @@ class CMSUpdateCommand extends Command {
 	public function fire()
 	{
 
-		$this->call('db:seed',array('--class'=>'CMSDatabaseSeeder'));
+                $this->call('config:publish',array('package'=>'laravella/cms'));
+                $this->call('asset:publish',array('package'=>'laravella/cms'));
+                $this->call('db:seed',array('--class'=>'CMSDatabaseSeeder'));
                 
 		$this->info('Successfully updated CMS');
 	}
