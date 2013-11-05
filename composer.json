@@ -1,7 +1,8 @@
 {
     "name": "laravella/cms",
     "description": "Laravella CMS",
-    "keywords": ["ravel","laravel","cms"],
+    "version": "v4.0.20131105",
+    "keywords": ["laravel","cms"],
     "license": "MIT",
     "authors": [
         {
