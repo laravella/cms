@@ -13,6 +13,7 @@ class CMSDatabaseSeeder extends Seeder {
 		$this->call('CMSSeedMenus');
 		$this->call('CMSSeedContentTypes');
 		$this->call('CMSSeedMediaTypes');
+		$this->call('CMSSeedContents');
 	}
 
 }
