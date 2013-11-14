@@ -18,8 +18,8 @@ class CreateContentsTable extends Migration {
 			$table->string('lang',3);
 			$table->integer('author_id')->unsigned();
 			$table->string('author_name')->nullable(); //name to overide actual username
-			$table->string('content_type'); //post, page, attachement // deprecated
-			$table->integer('content_type_id')->unsigned();; //post, page, attachement
+			//$table->string('content_type'); //post, page, attachement // deprecated
+			$table->integer('content_type_id')->nullable()->unsigned();; //post, page, attachement
 			$table->string('content_mime_type')->nullable(); //for attachments only
 			$table->string('title');
 			$table->string('slug');
@@ -33,11 +33,11 @@ class CreateContentsTable extends Migration {
 			$table->string('content_password',64)->nullable();
 			$table->integer('parent_id')->default(0)->unsigned();
 			$table->integer('comment_count')->default(0);
-			$table->datetime('publish_date');
+			$table->datetime('publish_date')->nullable();
                         $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
                         $table->timestamp('updated_at')->default('0000-00-00 00:00:00');
 
-			$table->unique(array('slug','content_type','lang','publish_date'),'contents_unique');
+			$table->unique(array('slug','lang','publish_date'),'contents_unique');
 
 //			$table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
 
