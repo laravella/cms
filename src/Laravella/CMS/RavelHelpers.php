@@ -10,6 +10,14 @@ if(! function_exists('adminUrl'))
 
 }
 
+if(! function_exists('p'))
+{
+	function p($var)
+	{
+            echo var_dump($var);
+        }
+}
+
 if(! function_exists('currentUserName'))
 {
 	function currentUserName()
