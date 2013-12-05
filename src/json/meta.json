@@ -1,11 +1,8 @@
-<?php namespace Laravella\CMS;
-
-use Laravella\Crud\CrudSeeder;
-
-class PostCrudSeeder extends CrudSeeder {
+{
+    "name": "Victor"
     
-    public function run()
-    {
+    /*
+    
         //cms
         setTitle('medias'.'_'.'getselect', 'Media');
         setTitle('contents'.'_'.'getselect', 'Content');
@@ -13,7 +10,6 @@ class PostCrudSeeder extends CrudSeeder {
         setTitle('galleries'.'_'.'getselect', 'Galleries');
         setTitle('users'.'_'.'getselect', 'Users');
         setTitle('usergroups'.'_'.'getselect', 'User Groups');
-        setTitle('categories'.'_'.'getselect', 'Categories');
-    }
-
+        setTitle('categories'.'_'.'getselect', 'Categories');    
+    */
 }

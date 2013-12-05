@@ -9,11 +9,8 @@ class CMSDatabaseSeeder extends Seeder {
 	 */
 	public function run()
 	{
-		$this->call('CMSAdminUserSeeder');
-		$this->call('CMSSeedMenus');
 		$this->call('CMSSeedContentTypes');
 		$this->call('CMSSeedMediaTypes');
-		$this->call('CMSSeedContents');
 	}
 
 }
