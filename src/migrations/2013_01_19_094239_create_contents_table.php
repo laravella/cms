@@ -22,7 +22,6 @@ class CreateContentsTable extends Migration {
 			$table->integer('content_type_id')->nullable()->unsigned();; //post, page, attachement
 			$table->string('content_mime_type')->nullable(); //for attachments only
 			$table->string('title');
-			$table->string('slug');
 			$table->text('content')->nullable();
 			$table->text('excerpt')->nullable();
 			$table->string('status')->default('draft')->nullable(); //draft, submitted, published,
